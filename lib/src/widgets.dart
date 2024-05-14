@@ -1,5 +1,7 @@
 import 'dart:math';
+
 import 'package:flutter/material.dart';
+
 import 'shimmer.dart';
 import 'stylings.dart';
 
@@ -7,7 +9,9 @@ part 'skeleton.dart';
 
 class SkeletonItem extends StatelessWidget {
   final Widget child;
+
   const SkeletonItem({Key? key, required this.child});
+
   @override
   Widget build(BuildContext context) {
     if (Shimmer.of(context) == null) {
@@ -25,6 +29,7 @@ class SkeletonItem extends StatelessWidget {
 
 class SkeletonAvatar extends StatelessWidget {
   final SkeletonAvatarStyle style;
+
   const SkeletonAvatar({Key? key, this.style = const SkeletonAvatarStyle()})
       : super(key: key);
 
@@ -53,7 +58,7 @@ class SkeletonAvatar extends StatelessWidget {
                       style.maxHeight ?? constraints.maxHeight)
                   : style.height,
               decoration: BoxDecoration(
-                color: Theme.of(context).backgroundColor,
+                color: Theme.of(context).colorScheme.surface,
                 shape: style.shape,
                 borderRadius:
                     style.shape != BoxShape.circle ? style.borderRadius : null,
@@ -68,6 +73,7 @@ class SkeletonAvatar extends StatelessWidget {
 
 class SkeletonLine extends StatelessWidget {
   final SkeletonLineStyle style;
+
   const SkeletonLine({Key? key, this.style = const SkeletonLineStyle()})
       : super(key: key);
 
@@ -97,7 +103,7 @@ class SkeletonLine extends StatelessWidget {
                       : style.width,
                   height: style.height,
                   decoration: BoxDecoration(
-                    color: Theme.of(context).backgroundColor,
+                    color: Theme.of(context).colorScheme.surface,
                     borderRadius: style.borderRadius,
                   ),
                 );
@@ -170,6 +176,7 @@ class SkeletonListTile extends StatelessWidget {
     this.verticalSpacing = 8,
     this.trailing,
   }) : super(key: key);
+
   // : assert(height >= lineHeight + spacing + (padding?.vertical ?? 16) + 2);
 
   @override
