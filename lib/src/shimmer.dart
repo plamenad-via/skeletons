@@ -1,8 +1,6 @@
 // Copyright 2020, the Flutter project authors. Please see the AUTHORS file
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 import 'stylings.dart';
@@ -35,6 +33,7 @@ class ShimmerWidget extends StatefulWidget {
 class ShimmerState extends State<ShimmerWidget>
     with SingleTickerProviderStateMixin {
   late AnimationController _shimmerController;
+
   // late LinearGradient _linearGradient;
 
   @override
@@ -133,6 +132,7 @@ class _SlidingGradientTransform extends GradientTransform {
 
 class Shimmer extends InheritedWidget {
   final ShimmerState shimmer;
+
   Shimmer({
     Key? key,
     required Widget child,
